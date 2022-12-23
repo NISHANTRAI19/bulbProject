@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bulb
+        </title>
+        <style>
+            .bulb-container{
+                margin:25px;
+                width:fit-content;
+                /* padding:10px;
+                padding-bottom: 0px; */
+                border: 30px solid antiquewhite;
+                border-style: groove;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Here is my bulb control</h1>
+        <button onclick="turnOn()">Turn on</button>
+        <button onclick="turnOff()">Turn off</button>
+        <button onClick="toggle()">Toggle</button>
+        <div class="bulb-container">
+        <img id="bulb" src="Bulb.jpg" alt="Picture of a bulb">
+        </div>
+        <script>
+            const turnOn=()=>{
+               let obj= document.getElementById('bulb');
+               obj.setAttribute('src','bulbON.jpg'); 
+            }
+            const turnOff=()=>{
+                let obj= document.getElementById('bulb');
+                obj.setAttribute('src','Bulb.jpg');
+            }
+            const toggle=()=>{
+                let obj=document.getElementById('bulb');
+                let state=obj.getAttribute('src');
+                if(state=='Bulb.jpg'){
+                    turnOn();
+                    console.log(state)
+                }
+                else
+                    turnOff();
+            }
+
+        </script>
+    </body>
+</html>
